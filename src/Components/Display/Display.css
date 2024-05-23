@@ -1,0 +1,118 @@
+/* Base styles */
+
+.display {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.display-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display-main-img {
+    width: 400px;
+    height: 400px;
+    max-width: 400px;
+    
+}
+
+.display-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 0;
+    margin-top: 0px;
+}
+
+.display-right h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.display-right-price-old {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 10px;
+    text-decoration: line-through;
+    
+}
+
+.display-right-price-new {
+    font-size: 24px;
+    color: #6e015d;
+    margin-bottom: 10px;
+}
+
+.display-right-description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.display-right-size h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.display-right-sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.display-right-sizes input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.display-right button {
+    padding: 10px 20px;
+    background-color: #6e015d;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Responsive styles */
+
+@media (min-width: 768px) {
+    .display {
+        flex-direction: row;
+    }
+
+    .display-left {
+        margin-right: 20px;
+    }
+
+    .display-right {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .display-right-sizes input[type="date"] {
+        min-width: 150px;
+    }
+}

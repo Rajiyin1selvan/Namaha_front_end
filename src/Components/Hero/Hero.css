@@ -1,0 +1,290 @@
+.hero {
+    display: flex;
+    justify-content: space-between; /* Maintain horizontal spacing */
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    color: white;
+    height: 120vh;
+    box-sizing: border-box;
+    font-family: Philosopher;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Ensure the text doesn't overflow the container */
+}
+
+.hero-left {
+    max-width: 40%;
+    padding-top: 50px;
+    padding-left: 40px;
+    display: flex; /* Allow flexbox for centering content */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the left */
+    padding-bottom: 190px;
+    text-align: left; /* Align text to the left */
+}
+
+.hero-right {
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    padding-top: 50px;
+}
+
+.hero-hand-icon {
+    margin-bottom: 20px; /* Adjust as needed */
+    box-shadow: 0 0 2em rgb(250, 213, 32);
+    border-radius: 100px;
+}
+
+.hero-hand-icon img {
+    width: 110px;
+    height: 110px;
+    border-radius: 80px;
+    box-shadow: 0 0 1em rgb(247, 197, 34);
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.hero h1,
+.hero h2,
+.hero-meaning {
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 500;
+    color: #7c1c56;
+    animation-delay: 0.5s;
+}
+
+.hero h1 span {
+    color: #7c1c56;
+    display: inline-block;
+    text-shadow: 
+        -1px -1px 0 #fff,  
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff; /* Creates a white outline */
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: white;
+    border-bottom-color: rgb(186, 6, 183);
+    font-weight: 1000;
+    padding-top: 50px;
+    animation-delay: 1s;
+}
+
+.hero-meaning {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: rgb(255, 119, 22);
+    font-weight: 800;
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hero-zodiac-icon {
+    width: 650px; /* Adjust size as needed */
+    height: 650px;
+    animation: rotate360 infinite 20s linear; /* Rotate 360 degrees infinitely */
+    position: absolute;
+    top: 0; /* Keep it at the top */
+    right: 0; /* Align to the right */
+}
+
+.hero-zodiac-icon img {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-background {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: blur(0px);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    
+    .hero-left {
+        text-align: center; /* Center text for smaller screens */
+        align-items: center;
+        padding-bottom: 20px;
+        max-width: 50%;
+    }
+    
+    .hero-right {
+        order: 2; /* Ensure .hero-right goes below .hero-left */
+        padding-top: 0;
+        max-width: 50%;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-meaning {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-right {
+        margin-top: 20px; /* Add spacing */
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero-meaning {
+        font-size: 1.6rem;
+    }
+
+    .hero-left {
+        padding-top: 20px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 951px) {
+    .hero-hand-icon,
+    .hero-zodiac-icon {
+        display: none; /* Hide the hand icon and rotating image */
+    }
+}
+
+@media (max-width: 950px) {
+    .hero-left {
+        padding-bottom: 20px;
+    }
+
+    .hero-right {
+        padding-top: 0;
+        order: 2; /* Ensure .hero-right goes below .hero-left */
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-meaning {
+        font-size: 1.4rem;
+    }
+
+    .hero-zodiac-icon {
+        width: 350px;
+        height: 350px;
+        order: 3; /* Ensure the rotating image goes below .hero-left */
+        position: relative; /* Change position to relative */
+        top: 0; /* Reset top position */
+        right: 0; /* Reset right position */
+        background: #df83d2 ;
+        border-radius: 1000px;
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero-zodiac-icon {
+        display: none; /* Hide the rotating image */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-meaning {
+        font-size: 1.4rem;
+    }
+
+    .hero-hand-icon img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero-zodiac-icon {
+        width: 150px; /* Adjust size for smaller screens */
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-meaning {
+        font-size: 1.2rem;
+    }
+
+    .hero-hand-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero-left {
+        padding-bottom: 50px;
+    }
+}
